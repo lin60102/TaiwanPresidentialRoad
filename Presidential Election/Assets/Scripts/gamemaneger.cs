@@ -432,10 +432,10 @@ public class gamemaneger : MonoBehaviour
                 result = 3; }
             else if (System.Array.IndexOf(GameData.onlinesmear, cardnum) >= 0) {
 
-                plyertxt.text = "Select your target! (Swipe his/her tag)";
+                Debug.Log ("Select your target! (Swipe his/her tag)");
 
                 string targetnum;
-                while (cardnum==text1)
+                while (cardnum!="")
                 {
                     targetnum = text1;
                     if (targetnum != cardnum)
@@ -448,8 +448,11 @@ public class gamemaneger : MonoBehaviour
                             GameData.ysups[r, pla] = GameData.ysups[r, pla] - incnum;
                             if (GameData.ysups[r, pla] < 0) { GameData.ysups[r, pla] = 0; }
                             GameData.ysups[r, p]= GameData.ysups[r, pla] + incnum;
+                            cardnum = "";
+                            Debug.Log("succed online smear");
                         }
                     }
+                    
                 }
 
                 result = 4; }
