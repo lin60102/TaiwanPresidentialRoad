@@ -432,28 +432,9 @@ public class gamemaneger : MonoBehaviour
                 result = 3; }
             else if (System.Array.IndexOf(GameData.onlinesmear, cardnum) >= 0) {
 
-                Debug.Log ("Select your target! (Swipe his/her tag)");
+                
 
-                string targetnum;
-                while (cardnum!="")
-                {
-                    targetnum = text1;
-                    if (targetnum != cardnum)
-                    {
-                        int pla;
-                        pla=System.Array.IndexOf(GameData.candiatesnum, targetnum);
-                        if (pla >= 0)
-                        {
-                            int incnum = Random.Range(1, 6)*10;
-                            GameData.ysups[r, pla] = GameData.ysups[r, pla] - incnum;
-                            if (GameData.ysups[r, pla] < 0) { GameData.ysups[r, pla] = 0; }
-                            GameData.ysups[r, p]= GameData.ysups[r, pla] + incnum;
-                            cardnum = "";
-                            Debug.Log("succed online smear");
-                        }
-                    }
-                    
-                }
+               
 
                 result = 4; }
             else if (System.Array.IndexOf(GameData.tradsmear, cardnum) >= 0) {
